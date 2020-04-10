@@ -1,5 +1,26 @@
 package com.skilldistillery.blackjack;
 
-public class BlackjackDealer {
+import com.skilldistillery.cards.Card;
+import com.skilldistillery.cards.Deck;
+import com.skilldistillery.players.Hand;
+
+public class BlackjackDealer extends Hand {
+	
+	private Deck deck = new Deck();
+	
+	public void shuffle() {
+		deck.shuffle();
+	}
+	
+	public Card getCard() {
+		Card card = deck.dealCard();
+		return card;
+	}
+
+	@Override
+	public int getHandValue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 }

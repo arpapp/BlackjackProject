@@ -1,5 +1,7 @@
 package com.skilldistillery.players;
 
-public class Player {
-
+public interface Player {
+	
+	
+	
 }
