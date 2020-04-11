@@ -62,6 +62,7 @@ public class BlackjackApp {
 		System.out.println("\"O-Oh! Uhhhhh......\"");
 		System.out.println();
 		menu(card, card2);
+		dealerDecisions(card3, card4);
 
 	}
 
@@ -81,17 +82,67 @@ public class BlackjackApp {
 				if (bust == true) {
 					System.out.println("\"BARNACLES,\" you yell. \" I've bust! No new jellyfishing net for me!\"");
 					System.out.println("*-*-* GAME OVER *-*-*");
+					System.exit(0);
 					break;
 				} else {
 					System.out.print("1. Hit or 2. Stay:  ");
 					choice = kb.nextInt();
 				}
-			} else {
+			}
+			else if (choice ==2) {
+				break;
+			}
+			else {
 				System.out.print("Invalid selection. Please type \"1\" for hit or \"2\" for stay: ");
 				choice = kb.nextInt();
 			}
 		} while (choice != 2);
 		System.out.println("The dealer nods and flips over his second card.");
-
+	}
+	
+	public void dealerDecisions(Card card, Card card2) {
+		System.out.println("He is now showing a(n) " + card2 + " in addition to his " + card + ".");
+		int dealerTotal = dealer.getHandValue();
+		int playerTotal = player.getHandValue();
+		
+		while(dealerTotal < 17) {
+			System.out.println("The dealer hits.");
+			Card hitCard = dealer.getCard();
+			dealer.addToHand(hitCard);
+			System.out.println("It's a(n) " + hitCard + ".");
+			
+			if (dealer.checkHandBust()) {
+				System.out.println("The dealer bangs the table and the chips fly everywhere.");
+				System.out.println("You lean back in your chair and smirk.");
+				System.out.println("\"Looks like the Triple Gooberberry Sunrise is on me.\"");
+				System.out.println("*-*-* CONGRATULATIONS, YOU WIN! *-*-*");
+				System.exit(0);
+			}
+		}
+		
+		if (playerTotal > dealerTotal) {
+			System.out.println("You lean back in your chair and smirk.");
+			System.out.println("\"Looks like the Triple Gooberberry Sunrise is on me.\"");
+			System.out.println("*-*-* CONGRATULATIONS, YOU WIN! *-*-*");
+		}
+		else if (playerTotal < dealerTotal) {
+			System.out.println("The dealer grins wide enough to show he's missing several teeth.");
+			System.out.println("You gulp as you reach into your pockets and give him your measly Krusty Krab salary.");
+			System.out.println("*-*-* GAME OVER *-*-*");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
