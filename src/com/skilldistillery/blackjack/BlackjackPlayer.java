@@ -14,4 +14,13 @@ public class BlackjackPlayer {
 	public int getHandValue() {
 		return playerHand.getHandValue();
 	}
+	
+	public boolean checkHandBust() {
+		int total = getHandValue();
+		return ((BlackjackHand) playerHand).isBust(total);
+	}
+	public boolean checkHandBlackjack() {
+		int total = getHandValue();
+		return ((BlackjackHand) playerHand).isBlackjack(total);
+	}
 }

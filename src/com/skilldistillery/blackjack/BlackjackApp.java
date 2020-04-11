@@ -66,8 +66,23 @@ public class BlackjackApp {
 				Card hitCard = dealer.getCard();
 				player.addToHand(hitCard);
 				System.out.println("It's a(n) " + hitCard + ".");
+				
+				boolean bust = player.checkHandBust();
+				boolean blackjack = player.checkHandBlackjack();
+				if (bust == true) {
+					System.out.println("\"BARNACLES,\" you yell. \" I've bust! No new jellyfishing net for me!\"" );
+					System.out.println("GAME OVER");
+					break;
+				}
+				else if (blackjack == true) {
+					System.out.println("You look down at your cards and can hardly believe it.");
+					System.out.println("\"JUMPIN' JELLYFISH! I GOT A BLACKJACK! PACK YOUR BAGS GARY, WE'RE GOING ON VACATION!\"");
+					System.out.println("CONGRATULATIONS, YOU WIN!");
+				}
+				else {
 				System.out.print("1. Hit or 2. Stay:  ");
 				choice = kb.nextInt();
+				}
 			}
 			else {
 				System.out.print("Invalid selection. Please type \"1\" for hit or \"2\" for stay: ");
@@ -77,5 +92,33 @@ public class BlackjackApp {
 		System.out.println("The dealer nods and flips over his second card.");
 		
 		
+		
 	}
 }
+
+//		boolean menuChecker = true;
+//		while(menuChecker) {
+//			switch(choice){
+//				case 1:
+//					System.out.println("The dealer turns over the top card and places it in your hand.");
+//					Card hitCard = dealer.getCard();
+//					player.addToHand(hitCard);
+//					System.out.println("It's a(n) " + hitCard + ".");
+//					
+//					boolean bust = player.checkHandBust();
+//					boolean blackjack = player.checkHandBlackjack();
+//					if (bust == true) {
+//						System.out.println("\"BARNACLES,\" you yell. \" I've bust! No new jellyfishing net for me!\"" );
+//						System.out.println("GAME OVER");
+//						menuChecker = false;
+//					}
+//					else if (blackjack == true) {
+//						System.out.println("You look down at your cards and can hardly believe it.");
+//						System.out.println("\"JUMPIN' JELLYFISH! I GOT A BLACKJACK! PACK YOUR BAGS GARY, WE'RE GOING ON VACATION!\"");
+//						System.out.println("CONGRATULATIONS, YOU WIN!");
+//						menuChecker = false;
+//					}
+//					
+//					
+//			}
+//		}

@@ -25,6 +25,15 @@ public class BlackjackDealer {
 	public int getHandValue() {
 		return dealerHand.getHandValue();
 	}
+	
+	public boolean checkHandBust() {
+		int total = getHandValue();
+		return ((BlackjackHand) dealerHand).isBust(total);
+	}
+	public boolean checkHandBlackjack() {
+		int total = getHandValue();
+		return ((BlackjackHand) dealerHand).isBlackjack(total);
+	}
 
 
 }

@@ -13,9 +13,9 @@ public class BlackjackHand extends Hand {
 			return totalHand;
 	}
 	
-	public boolean isBlackjack() {
-//		int hand = getHandValue();
-		if (hand == 21) {
+	public boolean isBlackjack(int total) {
+//		
+		if (total == 21) {
 			return true;
 		}
 		else {
@@ -23,9 +23,8 @@ public class BlackjackHand extends Hand {
 		}
 	}
 	
-	public boolean isBust() {
-//		int hand = getHandValue();
-		if (hand > 21) {
+	public boolean isBust(int total) {
+		if (total > 21) {
 			return true;
 		}
 		else {
@@ -34,9 +33,9 @@ public class BlackjackHand extends Hand {
 		
 	}
 	
-	public boolean isPush() {
-		return true;
-	}
+//	public boolean isPush() {
+//		return true;
+//	}
 	
 	
 
