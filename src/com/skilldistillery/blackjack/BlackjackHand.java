@@ -14,7 +14,6 @@ public class BlackjackHand extends Hand {
 	}
 	
 	public boolean isBlackjack(int total) {
-//		
 		if (total == 21) {
 			return true;
 		}
