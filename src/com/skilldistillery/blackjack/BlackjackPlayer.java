@@ -1,15 +1,14 @@
 package com.skilldistillery.blackjack;
 
+import com.skilldistillery.cards.Card;
 import com.skilldistillery.players.Hand;
 
-public class BlackjackPlayer extends Hand{
-
-	@Override
-	public int getHandValue() {
-		// TODO Auto-generated method stub
-		return 0;
+public class BlackjackPlayer {
+	
+	private Hand playerHand = new BlackjackHand ();
+	
+	public void addToHand(Card card) {
+		playerHand.addCard(card);
 	}
-	
-	
 
 }

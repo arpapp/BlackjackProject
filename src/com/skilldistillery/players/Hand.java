@@ -13,9 +13,8 @@ public abstract class Hand {
 		//default constructor
 	}
 	
-	public void addCard (card Card) {
-		//take a card from the deck and add to hand
-		//lol whut
+	public void addCard (Card card) {
+		cards.add(card);
 	}
 	
 	public void clear() {
@@ -26,8 +25,10 @@ public abstract class Hand {
 
 	@Override
 	public String toString() {
-		return "Hand [card=" + card + "]";
+		return "Hand [cards=" + cards + "]";
 	}
+
+	
 	
 	
 	

@@ -4,9 +4,10 @@ import com.skilldistillery.cards.Card;
 import com.skilldistillery.cards.Deck;
 import com.skilldistillery.players.Hand;
 
-public class BlackjackDealer extends Hand {
+public class BlackjackDealer {
 	
 	private Deck deck = new Deck();
+	private Hand dealerHand = new BlackjackHand();
 	
 	public void shuffle() {
 		deck.shuffle();
@@ -17,10 +18,5 @@ public class BlackjackDealer extends Hand {
 		return card;
 	}
 
-	@Override
-	public int getHandValue() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 }
