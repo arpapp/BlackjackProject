@@ -1,9 +1,11 @@
 package com.skilldistillery.blackjack;
 
+import java.util.Scanner;
+
 import com.skilldistillery.cards.Card;
 
 public class BlackjackApp {
-	
+	Scanner kb = new Scanner(System.in);
 	BlackjackDealer dealer = new BlackjackDealer();
 	BlackjackPlayer player = new BlackjackPlayer();
 
@@ -30,7 +32,46 @@ public class BlackjackApp {
 		
 		System.out.println("You glance at your cards.");
 		System.out.println("You have a(n) " + card + " and a(n) " + card2 + ".");
+		System.out.println();
+		System.out.println("You sponge sweat off your brow. The dealer sees this but says nothing.");
+		System.out.println("The dealer starts talking about how he had nails for breakfast.");
+		System.out.println("You can barely pay attention to his story as he deals two cards to himself.");
+		
+		Card card3 = dealer.getCard();
+		dealer.addToHand(card3);
+		Card card4 = dealer.getCard();
+		dealer.addToHand(card4);
+		
+		System.out.println("The dealer has one card showing. It's a(n) " + card3 + ".");
+		System.out.println();
+		System.out.println("You are brought back to reality when you realize the dealer is looking at you expectantly.");
+		System.out.println("\"What was that? S-sorry,\" you say,\"... I had one too many Kelp shakes.\"");
+		System.out.println("You cringe internally at your feeble attempt at humor.");
+		System.out.println("A muscle in the dealer's neck twitches.");
+		System.out.println("\"I said, \'Do you wanna hit or stay?\'\"");
+		System.out.println("\"O-Oh! Uhhhhh......\"");
+		System.out.println();
+		menu(card, card2);
 		
 	}
-
+	
+	public void menu(Card card, Card card2) {
+		System.out.println("So, would you like to \"1. HIT\" or \"2. STAY\"?");
+		System.out.print("\"1\" for hit, \"2\" for stay:");
+		int choice = kb.nextInt();
+		
+		while(choice != 2) {
+			if (choice == 1) {
+				System.out.println("The dealer turns over the top card and places it in your hand.");
+				Card hitCard = dealer.getCard();
+				player.addToHand(hitCard);
+				System.out.println("It's a(n) " + hitCard + ".");
+			}
+			else {
+				System.out.println("The dealer nods and flips over his second card.");
+			}
+		}
+		
+		
+	}
 }

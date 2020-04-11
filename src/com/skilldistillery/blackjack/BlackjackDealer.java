@@ -17,6 +17,10 @@ public class BlackjackDealer {
 		Card card = deck.dealCard();
 		return card;
 	}
+	
+	public void addToHand(Card card) {
+		dealerHand.addCard(card);
+	}
 
 
 }
