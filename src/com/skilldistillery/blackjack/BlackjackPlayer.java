@@ -11,4 +11,7 @@ public class BlackjackPlayer {
 		playerHand.addCard(card);
 	}
 
+	public int getHandValue() {
+		return playerHand.getHandValue();
+	}
 }

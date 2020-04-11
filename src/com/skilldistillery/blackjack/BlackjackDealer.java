@@ -21,6 +21,10 @@ public class BlackjackDealer {
 	public void addToHand(Card card) {
 		dealerHand.addCard(card);
 	}
+	
+	public int getHandValue() {
+		return dealerHand.getHandValue();
+	}
 
 
 }

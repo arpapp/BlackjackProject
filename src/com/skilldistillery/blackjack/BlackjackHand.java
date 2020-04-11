@@ -6,12 +6,15 @@ public class BlackjackHand extends Hand {
 
 	@Override
 	public int getHandValue() {
-		// TODO Auto-generated method stub
-		return 0;
+		int totalHand = 0;
+		for (int i = 0; i < cards.size(); i++) {
+			totalHand = totalHand + cards.get(i).getRank().getValue();
+		}
+			return totalHand;
 	}
 	
 	public boolean isBlackjack() {
-		int hand = getHandValue();
+//		int hand = getHandValue();
 		if (hand == 21) {
 			return true;
 		}
@@ -21,7 +24,7 @@ public class BlackjackHand extends Hand {
 	}
 	
 	public boolean isBust() {
-		int hand = getHandValue();
+//		int hand = getHandValue();
 		if (hand > 21) {
 			return true;
 		}
@@ -29,6 +32,10 @@ public class BlackjackHand extends Hand {
 			return false;
 		}
 		
+	}
+	
+	public boolean isPush() {
+		return true;
 	}
 	
 	

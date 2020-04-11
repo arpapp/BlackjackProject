@@ -56,21 +56,25 @@ public class BlackjackApp {
 	}
 	
 	public void menu(Card card, Card card2) {
-		System.out.println("So, would you like to \"1. HIT\" or \"2. STAY\"?");
-		System.out.print("\"1\" for hit, \"2\" for stay:");
+		System.out.println("So, would you like to 1. HIT or 2. STAY?");
+		System.out.print("\"1\" for hit, \"2\" for stay: ");
 		int choice = kb.nextInt();
 		
-		while(choice != 2) {
+		do {
 			if (choice == 1) {
 				System.out.println("The dealer turns over the top card and places it in your hand.");
 				Card hitCard = dealer.getCard();
 				player.addToHand(hitCard);
 				System.out.println("It's a(n) " + hitCard + ".");
+				System.out.print("1. Hit or 2. Stay:  ");
+				choice = kb.nextInt();
 			}
 			else {
-				System.out.println("The dealer nods and flips over his second card.");
+				System.out.print("Invalid selection. Please type \"1\" for hit or \"2\" for stay: ");
+				choice = kb.nextInt();
 			}
-		}
+		}while(choice != 2);
+		System.out.println("The dealer nods and flips over his second card.");
 		
 		
 	}
