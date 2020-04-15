@@ -1,4 +1,5 @@
 ###Overview
+
 The program is laid out in the format of a story. This was done in order to give context and direction to the object oriented nature of
 this project. The project was presented at first with a UML diagram that had many, but not all, of the classes that would be needed. As
 such, it was difficult to interpret how those different classes needed to interact with each other and relay information between themselves.
@@ -18,6 +19,7 @@ must hit. Otherwise, they will stay. Afterwards, the player and dealer's hand to
 - GitHub
 
 ###Lessons Learned
+
 This project was a really good demonstration of how different objects can communicate with each other. For example, the dealer was the only
 class to have an instance of the deck; therefore, whenever the deck needed to be manipulated, (a card needed to be dealt), the only 
 class with the accessibility to do so was the dealer. There were many different classes that forced me to skew my thinking towards object
